@@ -1,12 +1,14 @@
 import Head from 'next/head';
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '../components';
 import { Htag } from '../components';
-import P from '../components/P/P';
-import Rating from '../components/Rating/Rating';
-import Tag from '../components/Tag/Tag';
+import { P } from '../components/P/P';
+import { Rating } from '../components/Rating/Rating';
+import { Tag } from '../components/Tag/Tag';
 
 export default function Home(): JSX.Element {
+  const [rating, setRating] = useState<number>(4);
+
   return (
     <>
       <Head>
@@ -32,7 +34,7 @@ export default function Home(): JSX.Element {
         <Tag color={'red'}>hh.ru</Tag>
         <Tag color={'gray'}>01</Tag>
         <Tag color={'ghost'}>что</Tag>
-        <Rating />
+        <Rating rating={rating} isEditable setRating={setRating} />
       </main>
     </>
   );

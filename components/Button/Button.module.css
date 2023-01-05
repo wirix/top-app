@@ -43,3 +43,11 @@
   transform: rotate(90deg);
   transition: all .2s linear;
 }
+
+.primary:hover svg {
+  fill: var(--white);
+}
+
+.ghost:hover svg {
+  fill: var(--white);
+}

@@ -1,7 +1,7 @@
 import { ButtonProps } from "./Button.props";
 import styles from './Button.module.css';
 import cn from 'classnames';
-import Image from "next/image";
+import ArrowIcon from './arrow.svg';
 
 export const Button = ({ appearance, children, arrow = 'none', className, ...props }: ButtonProps): JSX.Element => {
   return (
@@ -17,7 +17,7 @@ export const Button = ({ appearance, children, arrow = 'none', className, ...pro
         [styles.down]: arrow === 'down',
         [styles.right]: arrow === 'right',
       })}>
-        <Image width={10} height={10} src={'/arrow.svg'} alt='' />
+        <ArrowIcon />
       </span>}
     </button>
   );

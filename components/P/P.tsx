@@ -2,7 +2,8 @@ import React from 'react';
 import { PProps } from './P.props';
 import cn from 'classnames';
 import styles from './P.module.css';
-const P = ({ children, fontSize = 'm', className, ...props }: PProps): JSX.Element => {
+
+export const P = ({ children, fontSize = 'm', className, ...props }: PProps): JSX.Element => {
   return (
     <p
       className={cn(styles.p, className, {
@@ -16,5 +17,3 @@ const P = ({ children, fontSize = 'm', className, ...props }: PProps): JSX.Eleme
     </p>
   );
 };
-
-export default P;
