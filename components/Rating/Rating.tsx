@@ -12,16 +12,16 @@ export const Rating = ({ rating, setRating, isEditable = false, className, ...pr
   }, [rating]);
 
   const contructRating = (currentRating: number) => {
-    const updatedArray = ratingArray.map((r: JSX.Element, i: number) => (
+    const updatedArray = ratingArray.map((_: JSX.Element, i: number) => (
       <span
-          className={cn(styles.star, className, {
-            [styles.filled]: i < currentRating,
-            [styles.editable]: isEditable,
-          })}
-          onMouseEnter={() => changeDisplay(i + 1)}
-          onMouseLeave={() => changeDisplay(rating)}
-          onClick={() => onClick(i + 1)}
-        >
+        className={cn(styles.star, className, {
+          [styles.filled]: i < currentRating,
+          [styles.editable]: isEditable,
+        })}
+        onMouseEnter={() => changeDisplay(i + 1)}
+        onMouseLeave={() => changeDisplay(rating)}
+        onClick={() => onClick(i + 1)}
+      >
         <StarIcon
           tabIndex={isEditable ? 0 : -1}
           onKeyDown={(e: KeyboardEvent<SVGElement>) => isEditable && handleSpace(i + 1, e)}
