@@ -13,6 +13,7 @@
   "dependencies": {
     "@next/font": "13.0.7",
     "@types/react-dom": "18.0.9",
+    "axios": "^1.2.3",
     "date-fns": "^2.29.3",
     "eslint-config-next": "13.0.7",
     "next": "13.0.7",
