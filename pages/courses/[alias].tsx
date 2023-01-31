@@ -17,7 +17,7 @@ function Course({ menu, page, products }: CourseProps): JSX.Element {
 }
 
 export default withLayout(Course);
-// так nextjs не знает, какие пути необходимо резолвить для постройки этой страницы
+// так как nextjs не знает, какие пути необходимо резолвить для постройки этой страницы
 export const getStaticPaths: GetStaticPaths = async () => {
   const { data: menu } = await axios.post<MenuItem[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find', {
     firstCategory

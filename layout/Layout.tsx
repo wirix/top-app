@@ -4,6 +4,7 @@ import { Header } from './Header/Header';
 import { Footer } from './Footer/Footer';
 import { Sidebar } from './Sidebar/Sidebar';
 import styles from './Layout.module.css';
+import { AppContextProvider, IAppContext } from '../context/app.context';
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
@@ -18,12 +19,18 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
   );
 };
 
-export const withLayout = <T extends Record<string, unknown>>(Component: FunctionComponent<T>) => {
+// type T = Record<string, unknown> evaluates to { [x: string]: unknown; }
+
+// & IAppContext дает всем страницам доступ к контексту
+export const withLayout = <T extends Record<string, unknown> & IAppContext>(Component: FunctionComponent<T>) => {
   return function withLayoutComponent(props: T) {
     return (
-      <Layout>
-        <Component {...props} />
-      </Layout>
+      // нужно передать стартовые значения, тк AppContextProvider имеет props
+      <AppContextProvider menu={props.menu} firstCategory={props.firstCategory}>
+        <Layout>
+          <Component {...props} />
+        </Layout>
+      </AppContextProvider>
     );
   };
 };
