@@ -1,0 +1,27 @@
+.sortIcon {
+  display: none;
+}
+
+.active {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.sort {
+  display: inline-block;
+  display: grid;
+  grid-template-columns: repeat(2, auto); /*если ставить 1fr то ширина будет у элтов одинаковая, если auto то по контенту*/
+  gap: 40px;
+}
+
+.sort span {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sort span:not(.active) {
+  grid-template-columns: 1fr;
+}
