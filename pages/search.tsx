@@ -7,7 +7,7 @@ import { MenuItem } from '../interfaces/menu.inteface';
 function Search(): JSX.Element {
   return (
     <>
-      fef
+      
     </>
   );
 }
