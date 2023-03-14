@@ -1,0 +1,150 @@
+.product {
+  display: grid;
+  grid-template-columns: [start] 70px [logoend] 30px [titlestart] calc(50% - 100px) [middle] 1fr [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [ratestart] auto [end];
+  margin-bottom: 30px;
+  padding: 30px;
+}
+
+/* 30+70 = 100*/
+
+.logo {
+  grid-column: start / logoend;
+  grid-row: 1 / span 2;
+}
+
+.title,
+.tags {
+  grid-column: titlestart / middle;
+}
+
+/*.tags на другой линии*/
+
+.price,
+.priceTitle {
+  grid-column: pricestart / priceend;
+}
+
+.credit,
+.creditTitle {
+  grid-column: creditstart / creditend;
+}
+
+.rating,
+.rateTitle {
+  grid-column: ratestart / end;
+}
+
+.hr,
+.description,
+.actions {
+  grid-column: start / end;
+}
+
+.feature {
+  grid-column: start / middle;
+}
+
+.advBlock {
+  grid-column: middle / end;
+}
+
+.logo img {
+  border-radius: 5px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  align-self: flex-end;
+}
+
+.category {
+  margin-top: 7px;
+}
+
+.month {
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.oldPrice {
+  margin-left: 5px;
+}
+
+.price,
+.credit {
+  font-size: 20px;
+  line-height: 27px;
+  align-self: flex-end;
+}
+
+.rating {
+  align-self: flex-end;
+}
+
+.priceTitle,
+.creditTitle,
+.rateTitle {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 19px;
+}
+
+.reviewButton {
+  margin-left: 20px;
+}
+
+.advTitle {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  margin-bottom: 5px;
+}
+
+.advantages,
+.disadvantages {
+  font-size: 16px;
+  line-height: 22px;
+  padding-left: 15px;
+}
+
+.advantages {
+  border-left: 2px solid var(--green);
+  margin-bottom: 20px;
+}
+
+.disadvantages {
+  border-left: 2px solid var(--red);
+}
+
+.characteristics {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  padding-right: 60px;
+  gap: 10px;
+}
+
+.characteristicsName {
+  font-weight: 700;
+}
+
+.characteristicsName,
+.characteristicsValue {
+  font-size: 16px;
+  line-height: 32px;
+}
+
+.characteristicsDots {
+  border-bottom: 1px dashed var(--gray-light);
+  margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+
+
