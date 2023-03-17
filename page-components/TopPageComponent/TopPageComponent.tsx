@@ -9,7 +9,7 @@ import { sortReducer } from "./sort.reducer";
 
 export const TopPageComponent = ({ firstCategory, page, products }: TopPageComponentProps): JSX.Element => {
   const [{ products: sortedProducts, sort }, dispatchSort] = useReducer(sortReducer, { products, sort: SortEnum.Rating });
-  // dispatchSort - фия менятьь что-то
+  // dispatchSort - фия менять что-то
   // { products, sort: SortEnum.Rating } - надо поставить начальные значения, желательно из пропсов
   const setSort = (sort: SortEnum) => {
     dispatchSort({ type: sort });
