@@ -1,11 +1,10 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import React, { useState } from 'react';
-import { Button, Input, Htag, P, Rating, Tag, Textarea } from '../components';
+import { Button, Input, Htag, P, Rating, Tag, Textarea, Review } from '../components';
 import { withLayout } from '../layout/Layout';
 import axios from 'axios';
 import { MenuItem } from '../interfaces/menu.inteface';
-import Search from './search';
 
 function Home({ menu }: HomeProps): JSX.Element {
   const [rating, setRating] = useState<number>(4);

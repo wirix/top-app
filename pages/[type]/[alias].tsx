@@ -41,7 +41,6 @@ export const getStaticProps: GetStaticProps<TopPageProps> = async ({ params }: G
       notFound: true
     };
   }
-
   try {
     const { data: menu } = await axios.post<MenuItem[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find', {
       firstCategory: firstCategoryItem.id

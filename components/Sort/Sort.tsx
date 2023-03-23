@@ -4,7 +4,6 @@ import cn from 'classnames';
 import styles from './Sort.module.css';
 
 export const Sort = ({sort, setSort, className, ...props }: SortProps): JSX.Element => {
-
   return (
     <div className={cn(className, styles.sort)} {...props}>
       <span
