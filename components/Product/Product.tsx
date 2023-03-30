@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { forwardRef, useRef, useState, ForwardedRef } from 'react';
 import { ProductProps } from './Product.props';
 import styles from './Product.module.css';
 import { Card } from '../Card/Card';
@@ -11,8 +11,9 @@ import Image from 'next/image';
 import cn from 'classnames';
 import { Review } from '../Review/Review';
 import { ReviewForm } from '../ReviewForm/ReviewForm';
+import { motion } from 'framer-motion';
 
-export const Product = ({ product, className, ...props }: ProductProps): JSX.Element => {
+export const Product = motion(forwardRef(({ product, className, ...props }: ProductProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
   const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false);
   const reviewRef = useRef<HTMLDivElement>(null);
 
@@ -23,8 +24,9 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
       block: 'start'
     });
   };
+
   return (
-    <div className={className} {...props} >
+    <div className={className} ref={ref} {...props}>
       <Card className={styles.product}>
         <div className={styles.logo}>
           <Image
@@ -47,7 +49,7 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
         <div className={styles.tags}>{product.categories.map(c => <Tag className={styles.category} key={c} color={'ghost'}>{c}</Tag>)}</div>
         <div className={styles.priceTitle}>цена</div>
         <div className={styles.creditTitle}>кредит</div>
-        <div className={styles.rateTitle}><a href={'#ref'} onClick={scrollToReview}>{product.reviewCount} {devlOfNum(product.reviewCount, ['отзыв', 'отзыва', 'отзывов'])}</a></div>
+        <div className={styles.rateTitle}><a href={'#ref'} onClick={() => scrollToReview()}>{product.reviewCount} {devlOfNum(product.reviewCount, ['отзыв', 'отзыва', 'отзывов'])}</a></div>
         <Divider className={styles.hr} />
         <div className={styles.description}>{product.description}</div>
         <div className={styles.feature}>
@@ -94,4 +96,4 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
       </Card>
     </div>
   );
-};
+}));

@@ -6,11 +6,12 @@ import Advantages from "../../components/Advantages/Advantages";
 import { SortEnum } from "../../components/Sort/Sort.props";
 import { useEffect, useReducer } from "react";
 import { sortReducer } from "./sort.reducer";
+import { useScrollY } from "../../hooks/useScrollY";
 
 export const TopPageComponent = ({ firstCategory, page, products }: TopPageComponentProps): JSX.Element => {
   // надо обновлять продукты
   const [{ products: sortedProducts, sort }, dispatchSort] = useReducer(sortReducer, { products, sort: SortEnum.Rating });
-
+  const y = useScrollY();
   // dispatchSort - фия менять что-то
   // { products, sort: SortEnum.Rating } - надо поставить начальные значения, желательно из пропсов
   const setSort = (sort: SortEnum) => {
@@ -28,7 +29,7 @@ export const TopPageComponent = ({ firstCategory, page, products }: TopPageCompo
         <Sort sort={sort} setSort={setSort} />
       </div>
       <div>
-        {sortedProducts && sortedProducts.map(p => (<Product key={p._id} product={p} />))}
+        {sortedProducts && sortedProducts.map(p => (<Product layout key={p._id} product={p} />))}
       </div>
       <div className={styles.hhTitle}>
         <Htag tag="h2">Вакансии - {page.category}</Htag>
