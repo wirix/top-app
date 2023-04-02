@@ -9,7 +9,6 @@ import { sortReducer } from "./sort.reducer";
 import { useScrollY } from "../../hooks/useScrollY";
 
 export const TopPageComponent = ({ firstCategory, page, products }: TopPageComponentProps): JSX.Element => {
-  // надо обновлять продукты
   const [{ products: sortedProducts, sort }, dispatchSort] = useReducer(sortReducer, { products, sort: SortEnum.Rating });
   const y = useScrollY();
   // dispatchSort - фия менять что-то
@@ -21,6 +20,7 @@ export const TopPageComponent = ({ firstCategory, page, products }: TopPageCompo
   useEffect(() => {
     dispatchSort({ type: 'reset', initialState: products });
   }, [products]);
+  
   return (
     <div className={styles.wrapper}>
       <div className={styles.title}>

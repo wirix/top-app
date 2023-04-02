@@ -45,14 +45,6 @@ export const Menu = (): JSX.Element => {
     }));
   };
 
-  // const checkLenWord = (word: string) => {
-  //   if (word.length >= 10) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // };
-
   const buildFirstLevel = () => {
     return (
       <>

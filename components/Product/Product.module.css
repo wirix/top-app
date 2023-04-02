@@ -142,18 +142,22 @@
   border-bottom: 1px dashed var(--gray-light);
   margin-bottom: 5px;
 }
-
-.closed {
+/* удалили для анимации  */
+/* .closed {
   min-height: 0;
   padding: 0;
   overflow: hidden;
   display: none;
   /* не пишем display none тк не сможем потом аниимировать выпадение высоты */
-}
-
+/* } */
+/* 
 .opened {
   max-height: auto;
   padding: 30px; 
+} */
+
+.reviews {
+  overflow: hidden;
 }
 
 .rateTitle a {

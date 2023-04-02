@@ -1,5 +1,6 @@
 .review {
   display: grid;
+  padding: 30px 30px 0;
   grid-template-columns: [start] auto 1fr auto auto [end];
   align-items: center;
   gap: 10px;
