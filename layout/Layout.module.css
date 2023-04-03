@@ -36,6 +36,7 @@
       "header"
       "body"
       "footer";
+      gap: 10px;
   }
 
   .sidebar {
