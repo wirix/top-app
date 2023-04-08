@@ -75,7 +75,18 @@ export const Menu = (): JSX.Element => {
           }
           return (
             <div key={m._id.secondCategory}>
-              <div className={styles.secondLevel} onClick={() => openSecondLevel(m._id.secondCategory)}>{m._id.secondCategory}</div>
+              <div
+                className={styles.secondLevel}
+                onClick={() => openSecondLevel(m._id.secondCategory)}
+                tabIndex={0}
+                onKeyDown={(e: KeyboardEvent) => {
+                  if (e.code === 'Enter' || e.code === 'Space') {
+                    // e.preventDefault(); убирает дефолтное поведение (в нашем случае пробел)
+                    e.preventDefault(); 
+                    openSecondLevel(m._id.secondCategory);
+                  }
+                }}
+              >{m._id.secondCategory}</div>
               <motion.div
                 layout
                 variants={variants}
@@ -83,7 +94,8 @@ export const Menu = (): JSX.Element => {
                 animate={m.isOpened ? 'visible' : 'hidden'}
                 className={styles.secondLevelBlock}
               >
-                {buildThirdLevel(m.pages, menuItem.route)}
+                {buildThirdLevel(m.pages, menuItem.route, m.isOpened ?? false)}
+                {/* m.isOpened ?? false означает если m.isOpened undef то false как стандартное значение*/}
               </motion.div>
             </div>
           );
@@ -92,14 +104,18 @@ export const Menu = (): JSX.Element => {
     );
   };
 
-  const buildThirdLevel = (pages: PageItem[], route: string) => {
+  const buildThirdLevel = (pages: PageItem[], route: string, isOpened: boolean) => {
     return (
       pages.map(p => (
         <motion.div key={p._id} variants={variantsChildren} >
-          <Link href={`/${route}/${p.alias}`} className={cn(styles.thirdLevel, {
-            [styles.thirdLevelActive]: `/${route}/${p.alias}` === router.asPath,
-            // [styles.thirdLevelExtra]: checkLenWord(p.category)
-          })}>
+          <Link
+            href={`/${route}/${p.alias}`}
+            className={cn(styles.thirdLevel, {
+              [styles.thirdLevelActive]: `/${route}/${p.alias}` === router.asPath,
+              // [styles.thirdLevelExtra]: checkLenWord(p.category)
+            })}
+            tabIndex={isOpened ? 0 : -1}
+          >
             {p.category}
           </Link>
         </motion.div>
