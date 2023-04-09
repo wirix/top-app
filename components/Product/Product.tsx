@@ -97,14 +97,14 @@ export const Product = motion(forwardRef(({ product, className, ...props }: Prod
         animate={isReviewOpened ? 'visible' : 'hidden'}
         className={cn(styles.reviews)}
       >
-        <Card color='blue' ref={reviewRef} >
+        <Card color='blue' ref={reviewRef} tabIndex={isReviewOpened ? 0 : -1} >
           {product.reviews.map(r => (
             <div key={r._id} >
               <Review review={r} />
               <Divider />
             </div>
           ))}
-          <ReviewForm productId={product._id} isOpened />
+          <ReviewForm productId={product._id} isOpened={isReviewOpened} />
         </Card>
       </motion.div>
     </div>

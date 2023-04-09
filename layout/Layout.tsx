@@ -16,8 +16,6 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
     if (key.code === 'Enter' || key.code === 'Space') {
       bodyRef.current?.focus();
       key.preventDefault();
-    } else if (key.code === 'Tab') {
-      console.log('first', key.code);
     }
     setIsSkipLinkDisplayed(false);
   };

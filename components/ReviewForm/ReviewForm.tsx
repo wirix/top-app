@@ -12,7 +12,7 @@ import axios from 'axios';
 import { API } from '../../helpers/api';
 import { useState } from 'react';
 
-export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewFormProps): JSX.Element => {
+export const ReviewForm = ({productId, isOpened, className, ...props }: ReviewFormProps): JSX.Element => {
   const { register, control, handleSubmit, formState: { errors }, reset, clearErrors } = useForm<IReviewForm>();
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const [error, setError] = useState<string>();
