@@ -40,6 +40,11 @@ export const Rating = forwardRef(({ tabIndex, error, rating, setRating, isEditab
         // условие вызова здесь не пишем, а внутри ф-ии, чтобы не изобретать велосипед
         onKeyDown={handleKey}
         ref={r => ratingArrayRef.current?.push(r)}
+        role={isEditable ? 'slider' : ''}
+        aria-valuenow={rating}
+        aria-valuemin={1}
+        aria-valuemax={5}
+        aria-label={isEditable ? 'укажите рейтинг стрелками вверх или вниз' : 'рейтинг' + {rating}}
       >
         <StarIcon />
       </span>

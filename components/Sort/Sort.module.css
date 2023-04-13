@@ -10,11 +10,19 @@
 .sort {
   display: inline-block;
   display: grid;
-  grid-template-columns: repeat(2, auto); /*если ставить 1fr то ширина будет у элтов одинаковая, если auto то по контенту*/
+  grid-template-columns: repeat(2, auto);
+  /*если ставить 1fr то ширина будет у элтов одинаковая, если auto то по контенту*/
   gap: 40px;
 }
 
-.sort span {
+.sortName {
+  display: none;
+}
+
+.sort button {
+  font-size: 19px;
+  background-color: none;
+  border: none;
   display: grid;
   grid-template-columns: 1fr;
   gap: 8px;
@@ -22,6 +30,6 @@
   cursor: pointer;
 }
 
-.sort span:not(.active) {
+.sort button:not(.active) {
   grid-template-columns: 1fr;
 }

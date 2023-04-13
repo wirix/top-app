@@ -78,10 +78,11 @@ export const ReviewForm = ({productId, isOpened, className, ...props }: ReviewFo
           className={styles.description}
           error={errors.description}
           tabIndex={isOpened ? 0 : -1}
-          aria-label='Текст отзыва'
+          aria-label='Напишите отзыв'
           aria-invalid={errors.description ? true : false}
         />
         <div className={styles.submit}>
+          {/* тк не удалились ошибки, то при повторной отправке они останутся, а в submit нельзя писать тк это только сработает при успехе */}
           <Button appearance="primary" tabIndex={isOpened ? 0 : -1} onClick={() => clearErrors()}>Отправить</Button>
           <span className={styles.info}>* Перед публикацией отзыв пройдет предварительную модерацию и проверку</span>
         </div>
