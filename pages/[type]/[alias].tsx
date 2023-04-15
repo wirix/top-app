@@ -9,9 +9,20 @@ import { ProductModel } from '../../interfaces/product.interface';
 import { firstLevelMenu } from '../../helpers/helpers';
 import { TopPageComponent } from '../../page-components';
 import { API } from '../../helpers/api';
+import Head from 'next/head';
 
 function TopPage({ page, products, firstCategory }: TopPageProps): JSX.Element {
-  return <TopPageComponent products={products} page={page} firstCategory={firstCategory} />;
+  return <>
+  {/* МЕТАТЕГИ РАСПРОСТРАНЯЮТСЯ НА СТРАНИЦЕ ТК ОНИ ОТНОСЯТСЯ К НИМ, А НЕ КОМПОНЕНТАМ */}
+    <Head>
+      <title>{page.metaTitle}</title>
+      <meta name='description' content={page.metaDescription} />
+      <meta property='og:title' content={page.metaTitle} />
+      <meta property='og:description' content={page.metaDescription} />
+      <meta property='og:type' content='article' />
+    </Head>
+    <TopPageComponent products={products} page={page} firstCategory={firstCategory} />;
+  </>;
 }
 
 export default withLayout(TopPage);

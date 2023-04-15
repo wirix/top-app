@@ -29,7 +29,7 @@ const nextConfig = {
     return config;
   },
   images: {
-    domains: ['courses-top.ru']
+    domains: ['courses-top.ru', 'mc.yandex.ru']
   }
 };
 
