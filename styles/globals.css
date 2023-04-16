@@ -1,9 +1,9 @@
 html,
 body {
 	margin: 0;
+	background-color: #F5F6F8;
 	padding: 0;
 	color: var(--black);
-	background-color: #F5F6F8;
 	font-family: "Noto Sans", sans-serif;
 }
 
@@ -19,7 +19,6 @@ p {
 
 a {
 	text-decoration: none;
-
 	color: inherit;
 }
 
@@ -30,22 +29,22 @@ a {
 }
 
 .visualHidden {
+	position: absolute;
 	width: 0;
 	height: 0;
 	overflow: hidden;
-	position: absolute;
 }
 
 :root {
 	--black: #3B434E;
 	--gray-light: #EBEBEB;
-	--gray-dark: #6c7077;
+	--gray-dark: #6C7077;
 	--gray: #A4A4A4;
 	--white: white;
-	--primary: #7351f5;
-	--primary-hover: #5939d9;
+	--primary: #7351F5;
+	--primary-hover: #5939D9;
 	--red: #FC836D;
-	--green: #007b48;
+	--green: #007B48;
 	--green-light: #C8F8E4;
 	--font-family: font-family: "Noto Sans", sans-serif;
 }

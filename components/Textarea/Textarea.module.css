@@ -1,33 +1,32 @@
 .textarea {
-  padding: 7px 15px;
-  width: 100%;
-  color: var(--black);
-  border: none;
-  outline-color: var(--primary);
-  background: var(--white);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
-  border-radius: 5px;
-
-  font-size: 16px;
-  font-weight: 22px;
-  font-family: var(--font-family);
+	outline-color: var(--primary);
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0 4px 4px rgb(0 0 0 / 5%);
+	background: var(--white);
+	padding: 7px 15px;
+	width: 100%;
+	color: var(--black);
+	font-family: var(--font-family);
+	font-size: 16px;
+	font-weight: 22px;
 }
 
 .input::placeholder {
-  color: var(--gray);
+	color: var(--gray);
 }
 
 .error {
-  border: 1px solid var(--red);
+	border: 1px solid var(--red);
 }
 
 .textareaWrapper {
-  position: relative;
+	position: relative;
 }
 
 .errorMessage {
-  position: absolute;
-  bottom: -15px;
-  left: 5px;
-  color: var(--red);
+	position: absolute;
+	bottom: -15px;
+	left: 5px;
+	color: var(--red);
 }

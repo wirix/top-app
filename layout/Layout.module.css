@@ -1,70 +1,72 @@
 .wrapper {
-  display: grid;
-  grid-template-columns: auto 230px minmax(320px, 1200px) auto;
-  min-height: 100vh;
-  gap: 40px 30px;
-  /* 4 колонки тк 2 по бокам дают разъежаться */
-  grid-template-areas:
-    ". header header ."
-    ". sidebar body ."
-    "footer footer footer footer";
-  grid-template-rows: auto 1fr auto;
-  /* оттолкнуть хед и фут от контента  */
+	display: grid;
+
+	/* 4 колонки тк 2 по бокам дают разъежаться */
+	grid-template:
+		". header header ."
+		". sidebar body ."
+		"footer footer footer footer";
+	grid-template-rows: auto 1fr auto;
+	grid-template-columns: auto 230px minmax(320px, 1200px) auto;
+	gap: 40px 30px;
+	min-height: 100vh;
+
+	/* оттолкнуть хед и фут от контента  */
 }
 
 .header {
-  grid-area: header;
-  display: none;
+	display: none;
+	grid-area: header;
 }
 
 .sidebar {
-  grid-area: sidebar;
+	grid-area: sidebar;
 }
 
 .body {
-  grid-area: body;
-  outline: none;
+	grid-area: body;
+	outline: none;
 }
 
 .footer {
-  grid-area: footer;
+	grid-area: footer;
 }
 
 .skipLink {
-  display: block;
-  position: fixed;
-  left: 100px;
-  top: 0;
-  overflow: hidden;
-  height: 0;
-  background: var(--primary);
-  color: var(--white);
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 100px;
+	background: var(--primary);
+	height: 0;
+	overflow: hidden;
+	color: var(--white);
 }
 
 .displayed {
-  /* display: none нельзя использовать тк он будет не табилитен*/
-  height: auto;
+	/* display: none нельзя использовать тк он будет не табилитен */
+	height: auto;
 }
 
 @media (max-width: 765px) {
-  .wrapper {
-    grid-template-columns: minmax(320px, 1fr);
-    grid-template-areas:
-      "header"
-      "body"
-      "footer";
-      gap: 10px;
-  }
+	.wrapper {
+		grid-template-areas:
+			"header"
+			"body"
+			"footer";
+		grid-template-columns: minmax(320px, 1fr);
+		gap: 10px;
+	}
 
-  .sidebar {
-    display: none;
-  }
+	.sidebar {
+		display: none;
+	}
 
-  .header {
-    display: block;
-  }
+	.header {
+		display: block;
+	}
 
-  .body {
-    padding: 15px;
-  }
+	.body {
+		padding: 15px;
+	}
 }

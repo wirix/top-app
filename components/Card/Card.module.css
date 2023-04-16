@@ -1,8 +1,8 @@
 .card {
-  border-radius: 5px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
+	border-radius: 5px;
+	box-shadow: 0 4px 4px rgb(0 0 0 / 5%);
 }
 
 .blue {
-  background: #F9F8FF;
+	background: #F9F8FF;
 }

@@ -1,35 +1,36 @@
 .sortIcon {
-  display: none;
+	display: none;
 }
 
 .active {
-  font-weight: 700;
-  color: var(--primary);
+	color: var(--primary);
+	font-weight: 700;
 }
 
 .sort {
-  display: inline-block;
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  /*если ставить 1fr то ширина будет у элтов одинаковая, если auto то по контенту*/
-  gap: 40px;
+	display: inline-block;
+	display: grid;
+	grid-template-columns: repeat(2, auto);
+
+	/* если ставить 1fr то ширина будет у элтов одинаковая, если auto то по контенту */
+	gap: 40px;
 }
 
 .sortName {
-  display: none;
+	display: none;
 }
 
 .sort button {
-  font-size: 19px;
-  background-color: none;
-  border: none;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 8px;
-  align-items: center;
-  cursor: pointer;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 8px;
+	align-items: center;
+	border: none;
+	background-color: none;
+	cursor: pointer;
+	font-size: 19px;
 }
 
 .sort button:not(.active) {
-  grid-template-columns: 1fr;
+	grid-template-columns: 1fr;
 }
