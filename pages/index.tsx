@@ -1,14 +1,16 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import React, { useState } from 'react';
-import { Button, Input, Htag, P, Rating, Tag, Textarea, Review } from '../components';
+import { Button, Input, Htag, P, Rating, Tag, Textarea } from '../components';
 import { withLayout } from '../layout/Layout';
 import axios from 'axios';
 import { MenuItem } from '../interfaces/menu.inteface';
 import { API } from '../helpers/api';
 
-function Home({ menu }: HomeProps): JSX.Element {
+function Home(): JSX.Element {
   const [rating, setRating] = useState<number>(4);
+  // мы всегда можем исп дефолтные 404 500, а также определять свои страницы
+  // return <Error statusCode={404} />;
 
   return (
     <>

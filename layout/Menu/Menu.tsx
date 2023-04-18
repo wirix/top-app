@@ -83,7 +83,7 @@ export const Menu = (): JSX.Element => {
                 tabIndex={0}
                 // не аннонсируется поэтому создаем state
                 aria-expanded={m.isOpened}
-                onKeyDown={(e: KeyboardEvent) => {
+                onKeyDown={(e) => {
                   if (e.code === 'Enter' || e.code === 'Space') {
                     // e.preventDefault(); убирает дефолтное поведение (в нашем случае пробел)
                     e.preventDefault();
